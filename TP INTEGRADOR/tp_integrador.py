@@ -146,10 +146,196 @@ def buscar_pais_menu():
 
     pausa()
 
+# --------- ALFREDO ----------
+def buscar_pais_menu():
+    """Permite buscar un pais por nombre."""
+    print("\n--- BUSCAR PAIS ---")
 
-# ========================
-# CODIGO ALEX
-# ========================
+    nombre_input = input("Nombre a buscar: ")
+    if not nombre_input or not nombre_input.strip():
+        print("X Error: Nombre no puede estar vacio")
+        pausa()
+        return
+
+    print("\n1. Busqueda exacta")
+    print("2. Busqueda parcial")
+    tipo = input("Seleccione tipo de busqueda (1-2): ").strip()
+
+    resultados = buscar_pais(
+        datos.obtener_todos(),
+        nombre_input,
+        busqueda_exacta=(tipo == "1")
+    )
+
+    if resultados:
+        mostrar_tabla_paises(resultados, f"Resultados de busqueda: '{nombre_input}'")
+    else:
+        print(f"\nX No se encontraron paises con '{nombre_input}'")
+
+    pausa()
+
+
+def filtrar_paises_menu():
+    """Menu para filtrar paises."""
+    print("\n--- FILTRAR PAISES ---")
+    print("1. Por continente")
+    print("2. Por rango de poblacion")
+    print("3. Por rango de superficie")
+    opcion = input("Seleccione tipo de filtro (1-3): ").strip()
+
+    resultados = []
+
+    if opcion == "1":
+        continentes = obtener_continentes(datos.obtener_todos())
+        print(f"\nContinentes disponibles: {', '.join(continentes)}")
+        continente = input("Continente: ")
+        if not continente or not continente.strip():
+            print("X Error: Continente no puede estar vacio")
+            pausa()
+            return
+        resultados = filtrar_por_continente(datos.obtener_todos(), continente)
+
+    elif opcion == "2":
+        min_pop_str = input("Poblacion minima: ")
+        if not min_pop_str or not min_pop_str.isdigit() or int(min_pop_str) <= 0:
+            print("X Error: Poblacion minima debe ser un numero entero positivo")
+            pausa()
+            return
+
+        max_pop_str = input("Poblacion maxima: ")
+        if not max_pop_str or not max_pop_str.isdigit() or int(max_pop_str) <= 0:
+            print("X Error: Poblacion maxima debe ser un numero entero positivo")
+            pausa()
+            return
+
+        min_pop = int(min_pop_str)
+        max_pop = int(max_pop_str)
+
+        if min_pop > max_pop:
+            print("X Error: La poblacion minima no puede ser mayor que la maxima")
+            pausa()
+            return
+
+        valid, result = filtrar_por_rango_poblacion(datos.obtener_todos(), min_pop, max_pop)
+        if not valid:
+            print(f"X {result}")
+            pausa()
+            return
+        resultados = result
+
+    elif opcion == "3":
+        min_sup_str = input("Superficie minima (km2): ")
+        if not min_sup_str or not min_sup_str.isdigit() or int(min_sup_str) <= 0:
+            print("X Error: Superficie minima debe ser un numero entero positivo")
+            pausa()
+            return
+
+        max_sup_str = input("Superficie maxima (km2): ")
+        if not max_sup_str or not max_sup_str.isdigit() or int(max_sup_str) <= 0:
+            print("X Error: Superficie maxima debe ser un numero entero positivo")
+            pausa()
+            return
+
+        min_sup = int(min_sup_str)
+        max_sup = int(max_sup_str)
+
+        if min_sup > max_sup:
+            print("X Error: La superficie minima no puede ser mayor que la maxima")
+            pausa()
+            return
+
+        valid, result = filtrar_por_rango_superficie(datos.obtener_todos(), min_sup, max_sup)
+        if not valid:
+            print(f"X {result}")
+            pausa()
+            return
+        resultados = result
+
+    else:
+        print("X Opcion invalida")
+        pausa()
+        return
+
+    if resultados:
+        mostrar_tabla_paises(resultados, "Resultados del filtro")
+    else:
+        print("\nX No se encontraron paises con esos criterios")
+
+    pausa()
+
+
+def ordenar_paises_menu():
+    """Menu para ordenar paises."""
+    print("\n--- ORDENAR PAISES ---")
+    print("1. Por nombre")
+    print("2. Por poblacion")
+    print("3. Por superficie")
+    opcion = input("Seleccione criterio de ordenamiento (1-3): ").strip()
+
+    print("\n1. Ascendente")
+    print("2. Descendente")
+    orden = input("Seleccione orden (1-2): ").strip()
+    descendente = (orden == "2")
+
+    if opcion == "1":
+        resultados = ordenar_por_nombre(datos.obtener_todos(), descendente)
+    elif opcion == "2":
+        resultados = ordenar_por_poblacion(datos.obtener_todos(), descendente)
+    elif opcion == "3":
+        resultados = ordenar_por_superficie(datos.obtener_todos(), descendente)
+    else:
+        print("X Opcion invalida")
+        pausa()
+        return
+
+    mostrar_tabla_paises(resultados, "Paises ordenados")
+    pausa()
+
+
+def mostrar_estadisticas_menu():
+    """Menu para mostrar estadisticas."""
+    print("\n" + "=" * 60)
+    print("ESTADISTICAS".center(60))
+    print("=" * 60)
+
+    paises_list = datos.obtener_todos()
+
+    if not paises_list:
+        print("\nX No hay paises para mostrar estadisticas")
+        pausa()
+        return
+
+    print("\n--- POBLACION ---")
+    mayor_poblacion = obtener_pais_mayor_poblacion(paises_list)
+    menor_poblacion = obtener_pais_menor_poblacion(paises_list)
+    mostrar_estadistica("Pais con mayor poblacion", mayor_poblacion['nombre'] + f" ({mayor_poblacion['poblacion']:,})")
+    mostrar_estadistica("Pais con menor poblacion", menor_poblacion['nombre'] + f" ({menor_poblacion['poblacion']:,})")
+    mostrar_estadistica("Promedio de poblacion", calcular_promedio_poblacion(paises_list), "habitantes")
+
+    print("\n--- SUPERFICIE ---")
+    mayor_superficie = obtener_pais_mayor_superficie(paises_list)
+    menor_superficie = obtener_pais_menor_superficie(paises_list)
+    mostrar_estadistica("Pais con mayor superficie", mayor_superficie['nombre'] + f" ({mayor_superficie['superficie']:,})")
+    mostrar_estadistica("Pais con menor superficie", menor_superficie['nombre'] + f" ({menor_superficie['superficie']:,})")
+    mostrar_estadistica("Promedio de superficie", calcular_promedio_superficie(paises_list), "km2")
+
+    print("\n--- DISTRIBUCION POR CONTINENTE ---")
+    continentes = contar_paises_por_continente(paises_list)
+    for continente, cantidad in continentes.items():
+        mostrar_estadistica(continente, cantidad, "paises")
+
+    print()
+
+    pausa()
+
+
+def mostrar_todos_paises():
+    """Muestra todos los paises en una tabla."""
+    paises_list = datos.obtener_todos()
+    mostrar_tabla_paises(paises_list, f"Todos los paises ({len(paises_list)} registros)")
+    pausa()
+
+# ---------- ALFREDO -------------
 
 
 def ejecutar():
