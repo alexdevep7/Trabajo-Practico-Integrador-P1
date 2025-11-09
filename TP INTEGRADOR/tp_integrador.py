@@ -119,33 +119,6 @@ def actualizar_pais():
     pausa()
 
 
-def buscar_pais_menu():
-    """Permite buscar un pais por nombre."""
-    print("\n--- BUSCAR PAIS ---")
-
-    nombre_input = input("Nombre a buscar: ")
-    if not nombre_input or not nombre_input.strip():
-        print("X Error: Nombre no puede estar vacio")
-        pausa()
-        return
-
-    print("\n1. Busqueda exacta")
-    print("2. Busqueda parcial")
-    tipo = input("Seleccione tipo de busqueda (1-2): ").strip()
-
-    resultados = buscar_pais(
-        datos.obtener_todos(),
-        nombre_input,
-        busqueda_exacta=(tipo == "1")
-    )
-
-    if resultados:
-        mostrar_tabla_paises(resultados, f"Resultados de busqueda: '{nombre_input}'")
-    else:
-        print(f"\nX No se encontraron paises con '{nombre_input}'")
-
-    pausa()
-
 # --------- ALFREDO ----------
 def buscar_pais_menu():
     """Permite buscar un pais por nombre."""
