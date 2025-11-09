@@ -1,261 +1,242 @@
-📊 Trabajo Práctico Integrador - Programación 1
-🎓 Universidad Tecnológica Nacional
-Tecnicatura Universitaria en Programación a Distancia (TUPAD)
+# 📊 Trabajo Práctico Integrador – Programación 1
 
-👥 ✨ Estudiantes de la Comisión Ag25-1C-03
+### 🎓 Universidad Tecnológica Nacional
 
-👤Nombre: Castillo Belisario, Alfredo
-👤Nombre: Chiuán Castilla, Cesia
-
-👨‍🏫 Docentes
-
-👤Coordinador: Alberto Cortez
-👤Profesor: Brian Lara
+**Tecnicatura Universitaria en Programación a Distancia (TUPAD)**
 
 ---
 
-📋 Descripción del Repositorio
-Este repositorio almacena el Trabajo Práctico Integrador de la materia 👨‍💻Programación 1👨‍💻.
-El proyecto consiste en un Sistema de Gestión de Datos de Países desarrollado en Python, que permite realizar operaciones de almacenamiento, consulta, filtrado, ordenamiento y análisis estadístico sobre un catálogo de países almacenado en formato CSV.
-🌍 Funcionalidades Principales:
-Gestión de Datos (CRUD):
+## 👥 Estudiantes – Comisión Ag25-1C-03
 
-✅ Agregar nuevos países al catálogo
-✅ Actualizar población y superficie de países existentes
-✅ Consultar información de países específicos
-✅ Visualizar el catálogo completo
+- **Castillo Belisario, Alfredo**
+- **Chiuán Castilla, Cesia**
 
-Búsquedas:
+## 👨‍🏫 Docentes
 
-🔍 Búsqueda exacta por nombre de país
-🔍 Búsqueda parcial (contiene texto)
-
-Filtros:
-
-🌎 Filtrar países por continente
-👥 Filtrar por rango de población
-📏 Filtrar por rango de superficie
-
-Ordenamiento:
-
-📊 Ordenar por nombre (A-Z o Z-A)
-📊 Ordenar por población (ascendente/descendente)
-📊 Ordenar por superficie (ascendente/descendente)
-
-Estadísticas:
-
-📈 País con mayor/menor población
-📈 País con mayor/menor superficie
-📈 Promedios de población y superficie
-📈 Distribución de países por continente
+- **Coordinador:** Alberto Cortez
+- **Profesor:** Brian Lara
 
 ---
 
-📌 ESTRUCTURA:📌
+## 📋 Descripción del Repositorio
 
+Este repositorio almacena el **Trabajo Práctico Integrador** de la materia **Programación 1**.  
+El proyecto consiste en un **Sistema de Gestión de Datos de Países**, desarrollado en **Python**, que permite realizar operaciones de almacenamiento, consulta, filtrado, ordenamiento y análisis estadístico sobre un catálogo de países en formato **CSV**.
+
+---
+
+## 🌍 Funcionalidades Principales
+
+### 🔧 Gestión de Datos (CRUD)
+
+- ✅ Agregar nuevos países al catálogo
+- ✅ Actualizar población y superficie
+- ✅ Consultar información de países específicos
+- ✅ Visualizar el catálogo completo
+
+### 🔍 Búsquedas
+
+- 🔹 Búsqueda exacta por nombre de país
+- 🔹 Búsqueda parcial (por texto contenido)
+
+### 🎯 Filtros
+
+- 🌎 Filtrar países por continente
+- 👥 Filtrar por rango de población
+- 📏 Filtrar por rango de superficie
+
+### 📊 Ordenamiento
+
+- 🔸 Por nombre (A–Z / Z–A)
+- 🔸 Por población (ascendente / descendente)
+- 🔸 Por superficie (ascendente / descendente)
+
+### 📈 Estadísticas
+
+- País con mayor/menor población
+- País con mayor/menor superficie
+- Promedios de población y superficie
+- Distribución de países por continente
+
+---
+
+## 📁 Estructura del Proyecto
+
+```bash
 📦 Trabajo-Practico-Integrador-P1/
 ├── 📁 TP INTEGRADOR/
-│ ├── 📄 tp_integrador.py # Archivo principal de ejecución
-│ │
-│ ├── 📁 modulos/ # Paquete de módulos del sistema
-│ │ ├── 📄 **init**.py # Inicialización del paquete
-│ │ ├── 📄 datos.py # CRUD y persistencia CSV
-│ │ ├── 📄 busquedas.py # Búsqueda exacta y parcial
-│ │ ├── 📄 estadisticas.py # Cálculos estadísticos
-│ │ ├── 📄 filtros.py # Filtros por criterios
-│ │ ├── 📄 ordenamiento.py # Ordenamiento de países
-│ │ ├── 📄 utilidades.py # Formateo y presentación
-│ │ └── 📄 validaciones.py # Validación de datos
-│ │
-│ └── 📁 datos/
-│ └── 📄 paises.csv # Base de datos de países
+│   ├── 📄 tp_integrador.py              # Archivo principal de ejecución
+│   │
+│   ├── 📁 modulos/                     # Paquete de módulos del sistema
+│   │   ├── __init__.py                 # Inicialización del paquete
+│   │   ├── datos.py                    # CRUD y persistencia CSV
+│   │   ├── busquedas.py                # Búsqueda exacta y parcial
+│   │   ├── estadisticas.py             # Cálculos estadísticos
+│   │   ├── filtros.py                  # Filtros por criterios
+│   │   ├── ordenamiento.py             # Ordenamiento de países
+│   │   ├── utilidades.py               # Formateo y presentación
+│   │   └── validaciones.py             # Validación de datos
+│   │
+│   └── 📁 datos/
+│       └── paises.csv                  # Base de datos de países
 │
-└── 📄 README.md # Este archivo
+└── 📄 README.md                        # Este archivo
 
----
 
-📚 DESCRIPCION DE LOS MODULOS:
-tp_integrador.py - Archivo principal
+🧩 Descripción de los Módulos
 
-Punto de entrada de la aplicación
-Menú interactivo con 8 opciones
-Coordinación de todos los módulos
+| Módulo               | Descripción                                                                                     |
+| -------------------- | ----------------------------------------------------------------------------------------------- |
+| **tp_integrador.py** | Punto de entrada de la aplicación. Menú interactivo con 8 opciones. Coordina todos los módulos. |
+| **datos.py**         | CRUD sobre CSV. Carga, guarda y valida duplicados.                                              |
+| **busquedas.py**     | Búsqueda exacta y parcial por nombre (case-insensitive).                                        |
+| **estadisticas.py**  | Cálculos de máximos, mínimos, promedios y conteo por continente.                                |
+| **filtros.py**       | Filtra por continente, rango de población o superficie.                                         |
+| **ordenamiento.py**  | Ordena por nombre, población o superficie (asc/desc).                                           |
+| **utilidades.py**    | Formato de tablas, visualización de países, limpieza de pantalla.                               |
+| **validaciones.py**  | Validación de entradas numéricas y textuales con mensajes descriptivos.                         |
 
-modulos/datos.py - Gestión de datos
 
-Carga y guarda datos desde/hacia CSV
-Operaciones CRUD (Create, Read, Update)
-Validación de duplicados y permisos de archivos
 
-modulos/busquedas.py - Búsquedas
+🎨 Características Técnicas
 
-Búsqueda exacta por nombre (case-insensitive)
-Búsqueda parcial por texto contenido
+✅ Arquitectura modular y separada por responsabilidades
 
-modulos/estadisticas.py - Estadísticas
+✅ Código limpio y documentado con docstrings
 
-Cálculo de máximos y mínimos
-Promedios poblacionales y de superficie
-Conteo por continente
-
-modulos/filtros.py - Filtros
-
-Filtrado por continente
-Filtrado por rangos de población
-Filtrado por rangos de superficie
-
-modulos/ordenamiento.py - Ordenamiento
-
-Ordenamiento por nombre (alfabético)
-Ordenamiento por población
-Ordenamiento por superficie
-Orden ascendente y descendente
-
-modulos/utilidades.py - Presentación
-
-Formato de tablas con box-drawing
-Visualización individual de países
-Separadores de miles en números
-Limpieza de pantalla multiplataforma
-
-modulos/validaciones.py - Validaciones
-
-Validación de números positivos
-Validación de textos no vacíos
-Validación de rangos lógicos
-Mensajes de error descriptivos
-
-🎨 Características de la estructura:
-
-✅ Arquitectura modular con separación de responsabilidades
-✅ Cada módulo tiene una función específica y bien definida
-✅ Código limpio, ordenado y bien documentado con docstrings
 ✅ Validaciones robustas sin uso de excepciones
+
 ✅ Persistencia automática en CSV tras modificaciones
 
----
+✅ Totalmente funcional con módulos estándar de Python
+
 
 🚀 Instrucciones de Ejecución
-Requisitos Previos
+🧠 Requisitos Previos
 
 Python 3.6 o superior
-No se requieren librerías de terceros (solo módulos estándar de Python)
 
-Verificar Versión de Python
-Windows:
-bashpython --version
-Mac/Linux:
-bashpython3 --version
+No se requieren librerías externas
+
+🔍 Verificar versión de Python
+
+# Windows
+python --version
+
+# Mac/Linux
+python3 --version
+
 Debe mostrar Python 3.6 o superior.
 
-Navegar por el Menú:
-El programa mostrará un menú interactivo con las siguientes opciones:
 
-1.  Agregar un pais
-2.  Actualizar datos de un pais
-3.  Buscar un pais por nombre
-4.  Filtrar paises
-5.  Ordenar paises
-6.  Ver estadisticas
-7.  Ver todos los paises
+▶️ Ejecución del Programa
+
+Al ejecutar el programa, se mostrará un menú interactivo:
+
+============================================================
+GESTIÓN DE DATOS DE PAÍSES
+============================================================
+1.  Agregar un país
+2.  Actualizar datos de un país
+3.  Buscar un país por nombre
+4.  Filtrar países
+5.  Ordenar países
+6.  Ver estadísticas
+7.  Ver todos los países
 8.  Salir
 
----
+Selecciona una opción (1–8) y presiona Enter.
 
-Seleccione una opcion (1-8):
+📦 Dependencias
 
-Ingresa el número de la opción deseada y presiona Enter.
+Este proyecto no utiliza librerías externas.
+Se emplean únicamente módulos estándar de Python:
 
----
+csv → lectura y escritura de archivos
 
-📚 Uso de Librerías de Terceros:
-El proyecto utiliza únicamente módulos estándar de Python, no requiere instalación de librerías de terceros mediante pip.
-Módulos estándar utilizados:
+os → manejo de rutas y permisos
 
-csv - Para lectura y escritura de archivos CSV
-os - Para operaciones del sistema de archivos (rutas, permisos)
-sys - Para gestión de salida del programa
+sys → salida y finalización del programa
 
-No se requiere ejecutar pip install para ninguna librería.
+No se requiere ejecutar pip install.
 
----
 
-Enlaces:
-📹 Video Demostrativo
-Link del video: [Pendiente de subir]
+🔗 Enlaces
 
-El video incluye una demostración completa del sistema, mostrando todas las funcionalidades: agregar países, búsquedas, filtros, ordenamiento y estadísticas.
+📹 Video Demostrativo: [Pendiente de subir]
+📄 Documentación en PDF: [Pendiente de subir]
 
-📄 Documentación en PDF
-Link del documento PDF: [Pendiente de subir]
+El video mostrará el flujo completo del sistema (agregar países, búsquedas, filtros, ordenamientos y estadísticas).
+El documento PDF incluirá la documentación técnica y los diagramas de arquitectura.
 
-El documento PDF contiene la documentación técnica completa del proyecto, diagramas de arquitectura y explicación detallada de cada módulo.
 
----
+💡 Ejemplos de Ejecución
+🧩 Ejemplo 1 – Agregar un País
 
-💡 Ejemplos de Entrada y Salida
-Ejemplo 1: Agregar un País
 Entrada:
 
-Seleccione una opcion (1-8): 1
-
---- AGREGAR PAIS ---
-Nombre del pais: Argentina
-Poblacion: 45195774
-Superficie (km2): 2780400
-Continente: America
+Seleccione una opción (1–8): 1
+--- AGREGAR PAÍS ---
+Nombre del país: Argentina
+Población: 45195774
+Superficie (km²): 2780400
+Continente: América
 
 Salida:
 
-Pais 'Argentina' agregado exitosamente
-Se guardaron 1 paises correctamente
+País 'Argentina' agregado exitosamente
+Se guardaron 1 país(es) correctamente
 
-Presiona Enter para continuar...
 
-Ejemplo 5: Ver Estadísticas
+📊 Ejemplo 2 – Ver Estadísticas
+
 Entrada:
 
-Seleccione una opcion (1-8): 6
+Seleccione una opción (1–8): 6
 
 Salida:
 
---- POBLACION ---
-Pais con mayor poblacion : China (1,439,323,776)
-Pais con menor poblacion : Vaticano (825)
-Promedio de poblacion : 67,890,123 habitantes
+============================================================
+ESTADÍSTICAS
+============================================================
+
+--- POBLACIÓN ---
+País con mayor población : China (1,439,323,776)
+País con menor población : Vaticano (825)
+Promedio de población : 67,890,123 habitantes
 
 --- SUPERFICIE ---
-Pais con mayor superficie : Rusia (17,098,242)
-Pais con menor superficie : Vaticano (0)
-Promedio de superficie : 1,234,567 km2
+País con mayor superficie : Rusia (17,098,242)
+País con menor superficie : Vaticano (0)
+Promedio de superficie : 1,234,567 km²
 
---- DISTRIBUCION POR CONTINENTE ---
-Africa : 54 paises
-America : 35 paises
-Asia : 48 paises
-Europa : 44 paises
-Oceania : 14 paises
+--- DISTRIBUCIÓN POR CONTINENTE ---
+África : 54 países
+América : 35 países
+Asia : 48 países
+Europa : 44 países
+Oceanía : 14 países
 
-Presiona Enter para continuar...
 
-Ejemplo 3: Manejo de Errores - Validación
+⚠️ Ejemplo 3 – Manejo de Errores
+
 Entrada:
 
-Seleccione una opcion (1-8): 1
-
---- AGREGAR PAIS ---
-Nombre del pais:
+Seleccione una opción (1–8): 1
+--- AGREGAR PAÍS ---
+Nombre del país:
 
 Salida:
 
-X Error: Nombre no puede estar vacio
+❌ Error: El nombre no puede estar vacío
 
-Presiona Enter para continuar...
 
----
+🧠 Créditos
 
-👨‍💻 Autores
-Estudiantes de la Tecnicatura Universitaria en Programación a Distancia
-Universidad Tecnológica Nacional (UTN)
-Comisión: Ag25-1C-03
-Año: 2025
+Proyecto desarrollado por:
+Castillo Belisario, Alfredo & Chiuán Castilla, Cesia
+📚 Universidad Tecnológica Nacional – TUPAD
+
+
+
+```
