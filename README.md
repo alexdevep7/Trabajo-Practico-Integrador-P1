@@ -151,10 +151,6 @@ Debe mostrar Python 3.6 o superior.
 Navegar por el Menú:
 El programa mostrará un menú interactivo con las siguientes opciones:
 
-============================================================
-GESTION DE DATOS DE PAISES
-============================================================
-
 1.  Agregar un pais
 2.  Actualizar datos de un pais
 3.  Buscar un pais por nombre
@@ -222,10 +218,6 @@ Entrada:
 Seleccione una opcion (1-8): 6
 
 Salida:
-
-============================================================
-ESTADISTICAS
-============================================================
 
 --- POBLACION ---
 Pais con mayor poblacion : China (1,439,323,776)
