@@ -119,6 +119,7 @@ def actualizar_pais():
     pausa()
 
 
+# --------- ALFREDO ----------
 def buscar_pais_menu():
     """Permite buscar un pais por nombre."""
     print("\n--- BUSCAR PAIS ---")
