@@ -168,10 +168,10 @@ No se requiere ejecutar pip install.
 
 El video muestra el flujo completo del sistema (agregar países, búsquedas, filtros, ordenamientos y estadísticas).
 
-* [TPI_Programación1](Trabajo-Practico-Integrador-P1/TP INTEGRADOR/documentacion/TPI_Programación1.pdf)
+* [TPI_Programación1.pdf](TP INTEGRADOR/documentacion/TPI_Programación1.pdf)
 
 El documento PDF incluye la documentación técnica.
 
 ## 💡 Casos de Uso
 
-* [CASOS_DE_USO](Trabajo-Practico-Integrador-P1/TP INTEGRADOR/documentacion/CASOS_DE_USO.md)
+* [CASOS_DE_USO.md](TP INTEGRADOR/documentacion/CASOS_DE_USO.md)
