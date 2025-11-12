@@ -160,83 +160,18 @@ sys → salida y finalización del programa
 
 No se requiere ejecutar pip install.
 
-
-🔗 Enlaces
-
-📹 Video Demostrativo: [Pendiente de subir]
-📄 Documentación en PDF: [Pendiente de subir]
-
-El video mostrará el flujo completo del sistema (agregar países, búsquedas, filtros, ordenamientos y estadísticas).
-El documento PDF incluirá la documentación técnica y los diagramas de arquitectura.
-
-
-💡 Ejemplos de Ejecución
-🧩 Ejemplo 1 – Agregar un País
-
-Entrada:
-
-Seleccione una opción (1–8): 1
---- AGREGAR PAÍS ---
-Nombre del país: Argentina
-Población: 45195774
-Superficie (km²): 2780400
-Continente: América
-
-Salida:
-
-País 'Argentina' agregado exitosamente
-Se guardaron 1 país(es) correctamente
-
-
-📊 Ejemplo 2 – Ver Estadísticas
-
-Entrada:
-
-Seleccione una opción (1–8): 6
-
-Salida:
-
-============================================================
-ESTADÍSTICAS
-============================================================
-
---- POBLACIÓN ---
-País con mayor población : China (1,439,323,776)
-País con menor población : Vaticano (825)
-Promedio de población : 67,890,123 habitantes
-
---- SUPERFICIE ---
-País con mayor superficie : Rusia (17,098,242)
-País con menor superficie : Vaticano (0)
-Promedio de superficie : 1,234,567 km²
-
---- DISTRIBUCIÓN POR CONTINENTE ---
-África : 54 países
-América : 35 países
-Asia : 48 países
-Europa : 44 países
-Oceanía : 14 países
-
-
-⚠️ Ejemplo 3 – Manejo de Errores
-
-Entrada:
-
-Seleccione una opción (1–8): 1
---- AGREGAR PAÍS ---
-Nombre del país:
-
-Salida:
-
-❌ Error: El nombre no puede estar vacío
-
-
-🧠 Créditos
-
-Proyecto desarrollado por:
-Castillo Belisario, Alfredo & Chiuán Castilla, Cesia
-📚 Universidad Tecnológica Nacional – TUPAD
-
-
-
 ```
+
+## 🔗 Enlaces
+
+* [Video Demostrativo](https://drive.google.com/file/d/1ZKUDw_Vz7jfIqAfkzxaqqi6F1MhtKW1l/view?usp=drive_link)
+
+El video muestra el flujo completo del sistema (agregar países, búsquedas, filtros, ordenamientos y estadísticas).
+
+* [TPI_Programación1.pdf](Trabajo-Practico-Integrador-P1/TP INTEGRADOR/documentacion/TPI_Programación1.pdf)
+
+El documento PDF incluye la documentación técnica.
+
+## 💡 Casos de Uso
+
+* [CASOS_DE_USO.md](Trabajo-Practico-Integrador-P1/TP INTEGRADOR/documentacion/CASOS_DE_USO.md)
